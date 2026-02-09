@@ -360,7 +360,12 @@
               </div>
             </summary>
             <div class="project-desc">
-              키워드
+
+              <a href="https://github.com/TeamLayer3/AWS-Security-Automation-Project" target="_blank"
+                style="display: inline-block; margin-bottom: 12px; font-weight: 500; color: inherit; text-decoration: none;">
+                🔗 Github Page
+              </a><br>
+              Keywords
               <div style="padding-left: 20px; margin-top: 5px;">
                 - CloudTrail · GuardDuty<br>
                 - EventBridge · Lambda<br>
@@ -368,53 +373,28 @@
                 - SOAR 아키텍처 설계<br><br>
               </div>
 
-              1. 프로젝트 개요 (Overview)
+              Project Overview
               <div style="padding-left: 20px; margin-top: 5px;">
-                AWS 클라우드 환경에서 발생하는 보안 위협을 단순 모니터링하는 수준을 넘어,<br>
-                실시간 탐지 시 즉각적인 기술적 조치(Remediation)가 실행되도록 자동화 파이프라인을 구축했습니다.<br>
-                보안 사고의 골든타임을 확보하고 운영자의 업무 부하를 줄이기 위해 탐지부터 기록, 시각화까지<br>
-                End-to-End 보안 프로세스를 정립했습니다.<br><br>
+                AWS 환경에서 발생하는 보안 위협을 실시간으로 탐지하고<br>
+                즉각적인 기술적 조치가 실행되도록 자동화된 SOAR 파이프라인을 설계했습니다.<br>
+                탐지부터 기록·시각화까지 이어지는 End-to-End 보안 운영 구조를 구현했습니다.<br><br>
               </div>
 
-              2. 문제 정의 (Problem)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 대응 지연 및 누락 : 보안 이벤트 탐지 후 운영자 수동 개입 필요하여 취약 시간대 대응 지연 발생<br>
-                - 설계적 취약성 : IAM 권한 오남용, S3 Public 노출 등 반복되는 설정오류에 대한 근본적 차단책 부재<br>
-                - 로그 가시성 부족 : 발생한 이벤트가 조치로 이어졌는지 추적성이 낮고 사후 감사 자료 활용의 어려움<br><br>
-              </div>
-
-              3. 설계 목표 (Goals)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 위험도별 대응 분기 : Critical(즉각 차단), High(조건부 대응), Medium/Low(기록/알림) 대응 정책 체계화<br>
-                - 자동화된 Remediation : Lambda와 Boto3를 활용하여 위협 요소를 실시간으로 격리 및 차단<br>
-                - 컴플라이언스 준수 : ISO 27001 및 NIST CSF 표준을 충족하는 로깅 및 통제 구조 설계<br>
-                - 가시성 확보 : WebSocket API 활용 이벤트 처리 흐름(New → Processing → Mitigated) 실시간 표출<br><br>
-              </div>
-
-              4. 나의 역할 (My Role)
+              Contribution
               <div style="padding-left: 20px; margin-top: 5px;">
                 - SOAR 아키텍처 설계 지원 : 리소스 파이프라인 통합 및 위협 대응 흐름 정의<br>
                 - 보안 이벤트 시나리오 : IAM(12종), Network(10종), S3(8종), Logging(6종) 총 34개 시나리오 정의<br>
-                - 탐지 룰 엔진 구축 : EventBridge 기반 패턴 매칭 규칙 설계<br>
+                - 탐지 룰 엔진 구축 : EventBridge 기반 패턴 매칭 규칙 설계 및 최적화<br>
                 - 보안 요구사항 및 통제 설계 : ISO 27001 및 NIST CSF 기반 통제 항목 도출<br><br>
-                총 34개 시나리오 중 IAM·Network 중심의 고위험 영역(18종)을 담당하여,<br>
-                침해로 직결되는 이벤트에 대한 탐지 및 자동 대응 기준을 설계했습니다.<br><br>
               </div>
 
-              5. 핵심 구현 내용 (Key Implementation)
+              Role Highlight
               <div style="padding-left: 20px; margin-top: 5px;">
-                - 다중 소스 탐지 : CloudTrail·Config·GuardDuty·Security Hub 이벤트를 EventBridge로 통합 처리<br>
-                - 자동 대응 파이프라인 : SQS 기반 Lambda 실행 구조로 재시도 가능한 자동 대응 구현<br>
-                - 보안 위협 시각화 : EC2 백엔드와 WebSocket 연동으로 위협 수준별 실시간 대시보드 구현<br>
-                - 이력 추적성 강화 : 탐지·대응 전 과정을 DynamoDB에 기록해 감사 추적성 확보<br><br>
+                전체 34개 시나리오 중 IAM·Network 기반 고위험 이벤트(18종)를 담당하여<br>
+                침해로 직결되는 탐지·자동 대응 기준 설계
               </div>
-
-              6. 결과 및 검증 (Outcome)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 시나리오 검증 : SSH 전체 오픈, S3 Public 정책 변경 등 고위험 이벤트 시 1초 이내 자동 복구 및 알림<br>
-                - 운영 효율성 증대 : Critical 위협 즉각 자동 차단 로직 적용으로 보안 운영 인력 개입 필요성 감소<br>
-                - 재발 방지 구조 확립 : 잘못된 설정 변경 시 즉시 원상 복구되도록 설계해 사고 재발 가능성 차단<br><br>
-              </div>
+              <img src="images/mywork_1.png" alt="AWS-SOAR Project Image"
+                style="width: 100%; border-radius: 6px; margin-top: 20px;">
             </div>
           </details>
 
@@ -429,7 +409,11 @@
               </div>
             </summary>
             <div class="project-desc">
-              키워드
+              <a href="https://github.com/s2n0n/c2z" target="_blank"
+                style="display: inline-block; margin-bottom: 12px; font-weight: 500; color: inherit; text-decoration: none;">
+                🔗 Github Page
+              </a><br>
+              Keywords
               <div style="padding-left: 20px; margin-top: 5px;">
                 - Kubernetes Security<br>
                 - CVE PoC 및 공격 시나리오 설계<br>
@@ -437,34 +421,14 @@
                 - Cloudflare Tunnel 기반 보안 통제 및 가시성 구현<br><br>
               </div>
 
-              1. 프로젝트 개요 (Overview)
+              Project Overview
               <div style="padding-left: 20px; margin-top: 5px;">
-                본 프로젝트는 Kubernetes 네이티브 환경에서 동작하는<br>
-                자동화된 CVE 재현 시뮬레이터 'C2Z'를 구축하는 것을 목표로 합니다.<br>
-                Helm Chart를 통해 누구나 취약점 환경을 원클릭으로 배포할 수 있는 구조를 설계했으며,<br>
-                공격자 관점의 시나리오 설계와 블루팀 관점의 탐지·방어 체계 구축을 통해<br>
-                인프라 보안 거버넌스의 실효성을 검증하는 데 집중했습니다.<br><br>
+                Kubernetes 환경에서 발생 가능한 CVE 기반 침투 시나리오를<br>
+                실제 공격–탐지–대응 흐름으로 재현할 수 있는 자동화 시뮬레이터를 구축했습니다.<br>
+                공격자 관점의 시나리오와 블루팀 관점의 관제를 동시에 검증하는 데 목적을 두었습니다.<br><br>
               </div>
 
-              2. 문제 정의 (Problem)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 이론과 실전의 간극: 단편적인 CVE 분석만으로는 복합적인 클러스터 침투 시나리오를 검증하기 어려움<br>
-                - 방어통제 실효성 불확실 : Network Policy·RBAC 등 보안설정의 실제 익스플로잇 환경 유효성 검증 필요<br>
-                - 거버넌스와 기술 간 괴리 : 규정상의 보안 통제가 기술 레벨에서 어떻게 구현·탐지되는지 기준 모호<br>
-                - 환경 구축 비효율성 : 취약 환경 매번 수동 구성해야 해 반복 실험과 체계적 검증 한계<br><br>
-              </div>
-
-              3. 설계 목표 (Goals)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 실전 공격 체인 구현: 권한 상승 및 컨테이너 탈출 등 실제 침해 사고로 이어지는 고위험 공격 흐름 재현<br>
-                - 단계별 침투 검증 : CVE-2024-1086 등 파급력 높은 취약점을 활용한 단계적 공격 시나리오 설계<br>
-                - 방어 실효성 검증 : 공격 단계별로 탐지·차단 가능한 블루팀 보안 관제 포인트 도출<br>
-                - 통합 보안 가시성 확보 : 공격 트래픽과 로그를 실시간으로 수집·시각화해 침해 흐름 추적 가능 구조 설계<br>
-                - 재현 자동화 : Helm Chart 기반 배포로 누구나 동일한 취약 환경을 손쉽게 구성할 수 있도록 자동화<br>
-                - 워게임 체계화 : 공격–방어를 반복 검증할 수 있는 Red Team · Blue Team 워게임 구조 확립<br><br>
-              </div>
-
-              4. 나의 역할 (My Role)
+              Contribution
               <div style="padding-left: 20px; margin-top: 5px;">
                 - 침투 시나리오 설계 : 최신 CVE 기반 Initial Access → Privilege Escalation → Exfiltration 진행<br>
                 - 취약 환경 컨테이너화 : 취약 버전 라이브러리 포함한 커스텀 이미지 빌드 및 GitHub 기반 취약 환경 관리<br>
@@ -473,21 +437,13 @@
                 - CI/CD 파이프라인 구축 : GitHub Actions 기반 보안 도구 배포 자동화<br><br>
               </div>
 
-              5. 핵심 구현 내용 (Key Implementation)
+              Role Highlight
               <div style="padding-left: 20px; margin-top: 5px;">
-                - CVE PoC 및 워게임 : 커널 취약점을 이용한 컨테이너 권한 상승 및 외부 유출 시나리오 PoC 재현<br>
-                - 공격 트래픽 분석 : tcpdump·Zeek·Suricata 기반 L4–L7 공격 패턴 수집 및 로그 상관 분석<br>
-                - 실시간 위협 시각화 : 공격 성공 시 발생하는 이상 징후를 Grafana 대시보드로 실시간 가시화<br>
-                - IaC 기반 환경 제공 : k3s/k3d 환경에서 Helm Chart로 취약·모니터링 환경 원클릭 배포<br>
-                - 외부 협업 환경 구성 : Cloudflare Tunnel 기반 안전한 외부 접근 경로 및 접근 로그 관리<br><br>
+                CVE 기반 침투 시나리오 설계부터 관제 파이프라인 구축까지 담당하여,<br>
+                공격–탐지–대응 전 과정을 블루팀 관점에서 검증 가능한 구조로 완성
               </div>
-
-              6. 결과 및 검증 (Outcome)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 공격-방어 루프 완성 : 공격자 사용 기법(TTPs)이 보안 장비(IDS/IPS)에서 어떻게 탐지되는지 수치 증명<br>
-                - 보안 패치 유효성 확인 : 보안 패치 적용 전/후의 익스플로잇 성공 여부를 비교하여 기술적 통제 효과 입증<br>
-                - 오픈소스 기여 : GitHub(s2n0n/c2z)를 통해 쿠버네티스 보안 학습 가능한 오픈 아키텍처 환경 릴리즈<br><br>
-              </div>
+              <img src="images/mywork_2.png" alt="CVE to ZeroDay Project Image"
+                style="width: 100%; border-radius: 6px; margin-top: 20px;">
             </div>
           </details>
 
@@ -515,7 +471,7 @@
               </div>
             </summary>
             <div class="project-desc">
-              키워드
+              Keywords
               <div style="padding-left: 20px; margin-top: 5px;">
                 - Next.js Security (Server Actions)<br>
                 - Zero-day 취약점 분석<br>
@@ -523,30 +479,14 @@
                 - s2n 탐지 플러그인 설계<br><br>
               </div>
 
-              1. 프로젝트 개요 (Overview)
+              Project Overview
               <div style="padding-left: 20px; margin-top: 5px;">
-                본 프로젝트는 'n0n' 조직 내에서 수행된 연구성 프로젝트로,<br>
-                Next.js 16.1.1의 핵심 기능인 Server Actions의 요청 처리 구조를 심층 분석했습니다.<br>
-                프레임워크 수준에서 내장된 CSRF 방어 로직이 특정 조건 하에 무력화될 수 있음을 가정하고,<br>
-                공격 PoC 구현부터 s2n 스캐너 연동을 위한 탐지 기준 수립까지 전 과정을 수행했습니다.<br><br>
+                Next.js 16.1.x의 Server Actions 요청 처리 구조를 분석하여,<br>
+                프레임워크에 내장된 CSRF 방어 로직의 구조적 한계를 검증한 연구 프로젝트입니다.<br>
+                공격 PoC 재현부터 탐지 기준 도출까지 전 과정을 수행했습니다.<br><br>
               </div>
 
-              2. 문제 정의 (Problem)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 내장 방어 로직 검증 필요 : Next.js CSRF 방어가 Server Actions 구조에서도 신뢰 가능한지 확인 필요<br>
-                - 구조적 취약점 실증 부족 : 최신 Next.js 버전의 내부 동작 기반 취약점에 대한 실증 사례와 공개 자료 부족<br>
-                - Zero-day 검증 공백 : 패치 여부와 무관하게 구조적 취약 가능성을 검증하는 연구·사례 부족<br>
-                - 운영 관점 대응 기준 미비 : 실제 서비스 트래픽에서 해당 공격 시도 식별·탐지 방법에 대한 기준 부재<br><br>
-              </div>
-
-              3. 설계 목표 (Goals)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - Zero-day 가능성 실증 : Next.js 16.1.X 환경에서 CSRF 우회 시나리오를 설계하고 실제 작동 여부 검증<br>
-                - 탐지 로직 모듈화 : 분석한 취약 패턴을 오픈소스 보안 스캐너 s2n 플러그인으로 이식하기 위한 기준 정립<br>
-                - 통합 보안 체인 구현 : c2z 환경에서 공격·로그·대응 흐름을 하나의 체인으로 구성<br><br>
-              </div>
-
-              4. 나의 역할 (My Role)
+              Contribution
               <div style="padding-left: 20px; margin-top: 5px;">
                 - 공격 PoC 구현 : 사용자 상호작용 없이 Server Actions를 호출하는 CSRF 우회 PoC 직접 작성 및 검증<br>
                 - 멀티 버전 재현 검증 : Next.js 16.1.1, 16.1.0, 16.0.6, 15.1.0 환경에서 취약점 발생 지점 비교 분석<br>
@@ -554,20 +494,13 @@
                 - 보안 리포트 작성 : CVE 발급 검토를 위한 분석 절차·영향 범위·대응 방안을 정리한 기술 보고서 초안 작성<br><br>
               </div>
 
-              5. 핵심 구현 내용 (Key Implementation)
+              Role Highlight
               <div style="padding-left: 20px; margin-top: 5px;">
-                - 취약점 재현 자동화 : 각 버전별 테스트 애플리케이션 신속하게 배포 및 검증 가능한 테스트 베드 구성<br>
-                - CSRF 우회 메커니즘 분석 : Server Actions의 특정 액션 ID와 요청 재사용성을 활용한 익스플로잇 설계<br>
-                - 환경별 비교 분석 : Vercel의 Edge Runtime과 일반 Node.js Runtime 간의 요청 처리 흐름 분석<br>
-                - s2n/c2z 연계 : 분석된 패턴을 s2n 스캐너의 탐지 룰로 변환하고, c2z 시뮬레이션 시나리오에 반영<br><br>
+                CSRF 우회 PoC 구현과 멀티 버전·멀티 인프라 재현을 통해 Zero-day 가능성을 기술적으로 입증하고,
+                이를 s2n 탐지 룰 및 CVE 리포트 초안으로 정리
               </div>
-
-              6. 결과 및 검증 (Outcome)
-              <div style="padding-left: 20px; margin-top: 5px;">
-                - 구조적 결함 증명 완료 : Next.js 16.1.1을 포함한 다수 버전에서 CSRF 방어 로직의 취약성 재현 성공<br>
-                - 인프라 무관 취약점 확인 : 호스팅 환경과 관계없이 프레임워크 자체의 로직 결함임을 기술적으로 증명<br>
-                - CVE 리포팅 기반 마련 : 취약점의 파급력과 상세 재현 단계가 정리된 분석 문서 작성 및 정식 제보 준비 중<br><br>
-              </div>
+              <img src="images/mywork_3.png" alt="n0n-CVE Project Image"
+                style="width: 100%; border-radius: 6px; margin-top: 20px;">
             </div>
           </details>
 
@@ -587,13 +520,46 @@
           <details>
             <summary>
               <div class="summary-content">
-                <h3 class="project-title">Security Research Topic</h3>
-                <span class="project-subtitle">최신 보안 트렌드 분석 및 연구</span>
+                <h3 class="project-title">Azure PlayFab CVE</h3>
+                <span class="project-subtitle">
+                  PlayFab의 Azure 인프라 취약점 분석 및 탐지 로직 검증<br>
+                  2026.02.01 ~ 2026.02.28
+                </span>
               </div>
             </summary>
             <div class="project-desc">
-              보안 관련 연구 주제 및 결과물에 대한 설명입니다.<br><br>
-              분석 리포트나 탐구 과정을 서술합니다.
+              Keywords
+              <div style="padding-left: 20px; margin-top: 5px;">
+                - Azure PlayFab Security<br>
+                - 인증·권한 검증 취약점 분석<br>
+                - Cookie / Token 기반 권한 상승<br>
+                - CVE 재현 및 공격 시나리오<br><br>
+              </div>
+
+              Project Overview
+              <div style="padding-left: 20px; margin-top: 5px;">
+                본 프로젝트는 Azure PlayFab 서비스에서 발견된 실제 CVE 취약점(CVE-2025-59247)을<br>
+                공개된 패치 정보에 의존하지 않고 공격자 관점에서 재현·검증한 개인 연구 프로젝트입니다.<br><br>
+
+                인증 이후 발급되는 쿠키·토큰 기반 권한 검증 흐름을 분석하고,<br>
+                일반 사용자 권한에서 관리자 기능으로 이어지는 권한 상승 공격 시나리오를 PoC로 재현했습니다.<br>
+                단순 취약점 소개를 넘어, 실제 서비스 환경에서 어떻게 악용될 수 있는지를 중심으로 분석했습니다.<br><br>
+              </div>
+
+              Contribution
+              <div style="padding-left: 20px; margin-top: 5px;">
+                - 취약점 재현 환경 구축 : Azure PlayFab 기반 테스트 환경 구성 및 정상·비정상 권한 흐름 비교<br>
+                - 공격 시나리오 설계 : Cookie 조작을 통한 권한 상승 및 관리자 API 접근 시나리오 수립<br>
+                - PoC 구현 : 일반 사용자 권한으로 관리자 기능 호출이 가능한 공격 PoC 직접 구현<br>
+                - 패치 효과 검증 : 보안 패치 적용 전·후 동일 공격 시도 비교를 통해 취약점 차단 여부 확인<br><br>
+              </div>
+
+              Role Highlight
+              <div style="padding-left: 20px; margin-top: 5px;">
+                실제 서비스형 클라우드 플랫폼(Azure PlayFab)을 대상으로 <br>
+                권한 검증 로직의 설계적 결함을 공격자 관점에서 재현·입증하고,<br>
+                취약점이 운영 환경에서 어떤 보안 리스크로 이어질 수 있는지 실증적으로 분석한 개인 프로젝트
+              </div>
             </div>
           </details>
 
