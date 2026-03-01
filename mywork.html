@@ -337,13 +337,72 @@
 
     <!-- CATCHPHRASE -->
     <div class="catchphrase">
-      실효성을 기준으로 설계한 보안 프로젝트입니다.
+      실전 서비스 분석과 공격 재현을 통해 검증한 보안 연구 사례입니다.
     </div>
 
     <!-- 01 -->
     <section class="about-section">
       <div class="section-title">
         <div class="index">01</div>
+        <h2>SECURITY<br>RESEARCH</h2>
+      </div>
+      <div class="section-content">
+        <div class="project-list">
+
+          <details>
+            <summary>
+              <div class="summary-content">
+                <h3 class="project-title">ACCESS BYPASS</h3>
+                <span class="project-subtitle">
+                  대기업 금융 서비스 접근 통제 취약점 분석 및 책임 공개 사례
+                </span>
+              </div>
+            </summary>
+            <div class="project-desc">
+              Keywords
+              <div style="padding-left: 20px; margin-top: 5px;">
+                - IDOR (Insecure Direct Object Reference)<br>
+                - Access Control Bypass<br>
+                - Unauthenticated Access<br>
+                - Financial Data Exposure<br>
+                - Responsible Disclosure<br><br>
+              </div>
+
+              Vulnerability Overview
+              <div style="padding-left: 20px; margin-top: 5px;">
+                국내 대형 금융사의 고객 상담(VOC) 시스템에서 확인된 접근 통제 우회 취약점(IDOR) 분석 사례입니다.<br>
+                객체 참조값(RGST_DT, TICKET_ID) 인증 및 권한 검증 로직이 누락된 구조적 결함을 식별하였으며,<br>
+                로그인하지 않아도 URL 파라미터 조작만으로 타 사용자의 상담 내역에 접근할 수 있음을 확인했습니다.<br><br>
+              </div>
+
+              Vulnerability Impact
+              <div style="padding-left: 20px; margin-top: 5px;">
+                - 공격 방식: 날짜(RGST_DT) 및 티켓 번호(TICKET_ID) 파라미터 변조<br>
+                - 유출 범위 : 2021.1월부터 2026.2월까지 약 5년 간의 고객 상담 및 첨부파일 조회 가능<br>
+                - 노출 정보 유형 : 주민등록번호, 휴대전화 번호, 신분증 사본, 계좌 정보, 계좌 비밀번호, 신용정보조회서 등<br>
+                - 비즈니스 리스크: 악의적 악용 시 보이스피싱, 명의도용 등 2차 금융 범죄로 이어질 잠재적 위험 존재<br><br>
+              </div>
+
+              Discovery & Action
+              <div style="padding-left: 20px; margin-top: 5px;">
+                취약점의 심각성을 인지한 즉시 개인정보 유출 파급력을 분석하고,<br>
+                해당 기업의 보안팀장 및 CISO에게 직접 긴급 보고하여 즉각적인 조치가 이루어질 수 있도록 전달했습니다.<br>
+                책임 공개(Responsible Disclosure) 원칙에 따라 외부 공개 없이 내부 개선을 유도했으며,<br>
+                고객 데이터 보호를 위한 신속한 보안 패치가 완료되었습니다.
+              </div>
+              <img src="images/mywork_5.png" alt="Access Bypass Vulnerability Image"
+                style="width: 100%; border-radius: 6px; margin-top: 20px;">
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="about-section">
+      <div class="section-title">
+        <div class="index">02</div>
         <h2>MAJOR<br>PROJECTS</h2>
       </div>
       <div class="section-content">
@@ -451,10 +510,10 @@
       </div>
     </section>
 
-    <!-- 02 -->
+    <!-- 03 -->
     <section class="about-section">
       <div class="section-title">
-        <div class="index">02</div>
+        <div class="index">03</div>
         <h2>SIDE<br>PROJECT</h2>
       </div>
       <div class="section-content">
@@ -508,10 +567,10 @@
       </div>
     </section>
 
-    <!-- 03 -->
+    <!-- 04 -->
     <section class="about-section">
       <div class="section-title">
-        <div class="index">03</div>
+        <div class="index">04</div>
         <h2>PERSONAL<br>PROJECT</h2>
       </div>
       <div class="section-content">
